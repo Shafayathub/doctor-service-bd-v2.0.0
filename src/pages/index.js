@@ -6,6 +6,8 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a lo
 import banner1 from '../images/banner/banner1.jpg';
 import banner2 from '../images/banner/banner2.jpg';
 import banner3 from '../images/banner/banner3.jpg';
+import Doctors from './components/Doctors';
+import Diagnostics from './components/Diagnostics';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -19,6 +21,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
+        {/* Banner */}
         <Carousel autoPlay infiniteLoop>
           <div>
             <Image
@@ -48,6 +51,9 @@ export default function Home() {
             <p className="legend">Ambulance</p>
           </div>
         </Carousel>
+        <Doctors></Doctors>
+        <hr />
+        <Diagnostics></Diagnostics>
       </main>
     </>
   );

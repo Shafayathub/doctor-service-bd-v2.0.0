@@ -2,7 +2,6 @@ import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 
 const ManageDocTableRow = ({ doctor }) => {
-  const { _id, name, img, speciality, degree, chamber } = doctor;
   const [doctors, setDoctors] = useState([]);
   useEffect(() => {
     fetch('https://server.doctorservicebd.com/doctor')
@@ -33,26 +32,26 @@ const ManageDocTableRow = ({ doctor }) => {
               <Image
                 width={1440}
                 height={1080}
-                src={img}
+                src={doctor?.img}
                 alt="Doctor Service BD"
               />
             </div>
           </div>
           <div>
-            <h6 className="font-bold">{name}</h6>
+            <h6 className="font-bold">{doctor?.name}</h6>
             <div className="text-sm opacity-50">DoctorServiceBD</div>
           </div>
         </div>
       </td>
       <td>
-        {speciality}
+        {doctor?.speciality}
         <br />
-        <span className="badge badge-ghost badge-sm">{degree}</span>
+        <span className="badge badge-ghost badge-sm">{doctor?.degree}</span>
       </td>
-      <td>{chamber}</td>
+      <td>{doctor?.chamber}</td>
       <th>
         <button
-          onClick={() => handleRemove(_id)}
+          onClick={() => handleRemove(doctor?._id)}
           className="btn btn-ghost btn-xs text-red-600">
           X
         </button>

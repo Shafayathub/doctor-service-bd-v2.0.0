@@ -2,7 +2,6 @@ import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 
 const ManageDiagTableRow = ({ diagnostic }) => {
-  const { _id, name, img, address, appoinment } = diagnostic;
   const [diagnostics, setDiagnostics] = useState([]);
   useEffect(() => {
     fetch('https://server.doctorservicebd.com/diagnostic')
@@ -35,26 +34,26 @@ const ManageDiagTableRow = ({ diagnostic }) => {
               <Image
                 width={1440}
                 height={1080}
-                src={img}
+                src={diagnostic?.img}
                 alt="diagnostic Service BD"
               />
             </div>
           </div>
           <div>
-            <h6 className="font-bold">{name}</h6>
+            <h6 className="font-bold">{diagnostic?.name}</h6>
             <div className="text-sm opacity-50">DocotorServiceBD</div>
           </div>
         </div>
       </td>
       <td>
-        {address}
+        {diagnostic?.address}
         <br />
         <span className="badge badge-ghost badge-sm">Diagnostic center</span>
       </td>
-      <td>{appoinment}</td>
+      <td>{diagnostic?.appoinment}</td>
       <th>
         <button
-          onClick={() => handleRemove(_id)}
+          onClick={() => handleRemove(diagnostic?._id)}
           className="btn btn-ghost btn-xs text-red-600">
           X
         </button>

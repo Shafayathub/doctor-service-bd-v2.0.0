@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import { useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
-import auth from './firebase/firebase.config';
+import auth from '../firebase/firebase.config';
 
 const ResetPass = () => {
   const [sendPasswordResetEmail, sending, error] =

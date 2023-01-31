@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import auth from './firebase/firebase.config';
+import auth from '../firebase/firebase.config';
 
 const AdminLogin = () => {
   const [signInWithEmailAndPassword, user, loading, error] =

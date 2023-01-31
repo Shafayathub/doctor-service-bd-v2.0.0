@@ -2,7 +2,7 @@ import { signOut } from 'firebase/auth';
 import Link from 'next/link';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import auth from '../firebase/firebase.config';
+import auth from '../../firebase/firebase.config';
 
 const Nav = () => {
   const [user] = useAuthState(auth);

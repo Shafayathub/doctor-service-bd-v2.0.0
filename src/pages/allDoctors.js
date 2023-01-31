@@ -9,10 +9,14 @@ const AllDoctors = () => {
     fetch('https://server.doctorservicebd.com/doctor')
       .then((res) => res.json())
       .then((data) => setDoctors(data));
-  }, []);
+  }, [query]);
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(event.target.value);
+    setQuery(event.target.value);
+    const search = doctors.filter((doctor) =>
+      doctor.speciality.toLowerCase().includes(query)
+    );
+    setDoctors(search);
   };
   return (
     <>
@@ -34,7 +38,7 @@ const AllDoctors = () => {
             <div onChange={handleSubmit} className="input-group mx-5">
               <input
                 type="text"
-                placeholder="Search…"
+                placeholder="medicine, nuro, gyno..."
                 className="input input-bordered"
               />
               <button className="btn btn-square">

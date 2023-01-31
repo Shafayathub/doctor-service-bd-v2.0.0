@@ -5,14 +5,14 @@ const ManageDocTableRow = ({ doctor }) => {
   const { _id, name, img, speciality, degree, chamber } = doctor;
   const [doctors, setDoctors] = useState([]);
   useEffect(() => {
-    fetch('http://localhost:5000/doctor')
+    fetch('https://server.doctorservicebd.com/doctor')
       .then((res) => res.json())
       .then((data) => setDoctors(data));
   }, []);
   const handleRemove = (id) => {
     const proceed = window.confirm('Are you sure?');
     if (proceed) {
-      const url = `http://localhost:5000/doctor/${id}`;
+      const url = `https://server.doctorservicebd.com/doctor/${id}`;
       fetch(url, {
         method: 'DELETE',
       })

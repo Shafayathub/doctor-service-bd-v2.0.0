@@ -5,7 +5,7 @@ import Diagnostic from './Diagnostic';
 const Diagnostics = () => {
   const [diagnostics, setDiagnostics] = useState([]);
   useEffect(() => {
-    fetch('http://localhost:5000/diagnostic')
+    fetch('https://server.doctorservicebd.com/diagnostic')
       .then((res) => res.json())
       .then((data) => setDiagnostics(data.slice(0, 3)));
   }, []);

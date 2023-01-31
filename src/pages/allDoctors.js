@@ -6,7 +6,7 @@ const AllDoctors = () => {
   const [doctors, setDoctors] = useState([]);
   const [query, setQuery] = useState('');
   useEffect(() => {
-    fetch('http://localhost:5000/doctor')
+    fetch('https://server.doctorservicebd.com/doctor')
       .then((res) => res.json())
       .then((data) => setDoctors(data));
   }, []);

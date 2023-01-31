@@ -6,7 +6,7 @@ const Slug = () => {
   const router = useRouter();
   const { slug } = router.query;
   const [doctor, setDoctor] = useState([]);
-  const url = `http://localhost:5000/doctorDetails/${slug}`;
+  const url = `https://server.doctorservicebd.com/doctorDetails/${slug}`;
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())

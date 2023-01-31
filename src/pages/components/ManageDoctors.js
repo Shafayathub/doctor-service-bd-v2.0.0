@@ -4,7 +4,7 @@ import ManageDocTableRow from './ManageDocTableRow';
 const ManageDoctors = () => {
   const [doctors, setDoctors] = useState([]);
   useEffect(() => {
-    fetch('http://localhost:5000/doctor')
+    fetch('https://server.doctorservicebd.com/doctor')
       .then((res) => res.json())
       .then((data) => setDoctors(data));
   }, [doctors]);

@@ -31,7 +31,7 @@ const Nav = () => {
               <Link href={'/allDiagnostics'}>Diagnostics</Link>
             </li>
             <li>
-              <a>About Us</a>
+              <Link href={'/about'}>About Us</Link>
             </li>
           </ul>
         </div>
@@ -48,7 +48,7 @@ const Nav = () => {
             <Link href={'/allDiagnostics'}>Diagnostics</Link>
           </li>
           <li>
-            <a>About Us</a>
+            <Link href={'/about'}>About Us</Link>
           </li>
         </ul>
       </div>

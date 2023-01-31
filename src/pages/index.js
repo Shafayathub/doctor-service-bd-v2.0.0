@@ -16,7 +16,12 @@ export default function Home() {
     <>
       <Head>
         <title>Doctor Service BD</title>
-        <meta name="description" content="Doctor Service BD" />
+        <meta
+          name="description"
+          content="Doctor Service BD. We are committed to serve you with better Health Care. Welcome to
+              you our Doctor Service BD website to take the services and serial
+              of all expert and experienced doctors in Rajshahi."
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

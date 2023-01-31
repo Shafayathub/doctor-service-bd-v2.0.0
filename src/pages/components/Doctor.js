@@ -1,14 +1,16 @@
 import Image from 'next/image';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import React from 'react';
 
 const Doctor = ({ doctor }) => {
-  const { name, img } = doctor;
+  const { _id, name, img, speciality, degree } = doctor;
   return (
     <div>
       <div className="card card-side bg-base-100 shadow-xl border border-accent-content">
         <figure>
           <Image
-            className="rounded-lg"
+            className="p-2 rounded-xl"
             width={1440}
             height={1080}
             src={img}
@@ -16,9 +18,12 @@ const Doctor = ({ doctor }) => {
         </figure>
         <div className="card-body">
           <h2 className="card-title">{name}</h2>
-          <p>Click the button to watch on Jetflix app.</p>
+          <p className="text-sm">{speciality}</p>
+          <p className="text-sm">{degree}</p>
           <div className="card-actions justify-end">
-            <button className="btn btn-primary">Details</button>
+            <Link href={`/doctorDetails/${_id}`}>
+              <button className="btn btn-primary">Details</button>
+            </Link>
           </div>
         </div>
       </div>

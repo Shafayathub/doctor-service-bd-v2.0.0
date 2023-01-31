@@ -5,7 +5,7 @@ import Diagnostic from './Diagnostic';
 const Diagnostics = () => {
   const [diagnostics, setDiagnostics] = useState([]);
   useEffect(() => {
-    fetch('https://server-doctorservicebd-com.onrender.com/diagnostic')
+    fetch('http://localhost:5000/diagnostic')
       .then((res) => res.json())
       .then((data) => setDiagnostics(data.slice(0, 3)));
   }, []);
@@ -18,7 +18,7 @@ const Diagnostics = () => {
         ))}
       </div>
       <div className="flex justify-center m-2">
-        <Link href={'../components/allDiagnostics'}>
+        <Link href={'/allDiagnostics'}>
           <button className="btn btn-wide">See All</button>
         </Link>
       </div>

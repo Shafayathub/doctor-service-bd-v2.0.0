@@ -1,7 +1,17 @@
+import { signOut } from 'firebase/auth';
 import Link from 'next/link';
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../firebase/firebase.config';
 
 const Nav = () => {
+  const [user] = useAuthState(auth);
+  const logout = () => {
+    const agree = window.confirm('Do you really want to log Out?');
+    if (agree) {
+      signOut(auth);
+    }
+  };
   return (
     <div className="navbar bg-base-100 z-10 sticky top-0">
       <div className="navbar-start">
@@ -30,6 +40,16 @@ const Nav = () => {
             <li>
               <Link href={'/allDiagnostics'}>Diagnostics</Link>
             </li>
+            {user && (
+              <>
+                <li>
+                  <Link href={'/manageDoctors'}>Manage Doctors</Link>
+                </li>
+                <li>
+                  <Link href={'/manageDiagnostics'}>Manage Diagnostics</Link>
+                </li>
+              </>
+            )}
             <li>
               <Link href={'/about'}>About Us</Link>
             </li>
@@ -47,15 +67,31 @@ const Nav = () => {
           <li>
             <Link href={'/allDiagnostics'}>Diagnostics</Link>
           </li>
+          {user && (
+            <>
+              <li>
+                <Link href={'/manageDoctors'}>Manage Doctors</Link>
+              </li>
+              <li>
+                <Link href={'/manageDiagnostics'}>Manage Diagnostics</Link>
+              </li>
+            </>
+          )}
           <li>
             <Link href={'/about'}>About Us</Link>
           </li>
         </ul>
       </div>
       <div className="navbar-end">
-        <Link href="tel:+8801723-025514" className="btn">
-          Call Us
-        </Link>
+        {user ? (
+          <button onClick={logout} className="btn">
+            Log Out
+          </button>
+        ) : (
+          <Link href="tel:+8801723-025514" className="btn">
+            Call Us
+          </Link>
+        )}
       </div>
     </div>
   );

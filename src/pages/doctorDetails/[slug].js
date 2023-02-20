@@ -12,42 +12,35 @@ const Slug = () => {
       .then((res) => res.json())
       .then((data) => setDoctor(data));
   }, [url]);
-  const {
-    name,
-    img,
-    speciality,
-    degree,
-    hospital,
-    chamber,
-    visiting,
-    appointment,
-    about,
-  } = doctor;
+  const { name, img, speciality, degree, hospital, chamber, visiting, about } =
+    doctor;
   return (
     <>
-      <div className="hero min-h-screen bg-base-200">
+      <section className="hero min-h-screen bg-base-100 shadow-xl">
         <div className="hero-content flex-col lg:flex-row">
           <Image
             width={1440}
             height={1080}
             src={img}
             alt={name}
-            className="max-w-sm rounded-lg shadow-2xl"
+            className="md:max-w-xs rounded-lg shadow-2xl"
           />
           <div>
-            <h1 className="text-5xl font-bold">{name}</h1>
-            <p className="text-sm">{speciality}</p>
-            <p className="text-sm">{degree}</p>
-            <p className="text-sm">{hospital}</p>
-            <p className="text-sm">Chamber: {chamber}</p>
-            <p className="text-sm">Visitinghour: {visiting}</p>
-            <p className="py-6">{about}</p>
-            <Link href={`tel:${appointment}`} className="btn">
+            <div className="p-5 border rounded-lg shadow-lg">
+              <h1 className="text-5xl font-bold">{name}</h1>
+              <p className="text-sm mt-2">{speciality}</p>
+              <p className="text-sm">{degree}</p>
+              <p className="text-sm">{hospital}</p>
+              <p className="text-sm">Chamber: {chamber}</p>
+              <p className="text-sm">Visitinghour: {visiting}</p>
+            </div>
+            <p className="my-2 p-5 border rounded-lg shadow-xl">{about}</p>
+            <Link href={'tel:+8801723025514'} className="btn">
               Call For Appointment
             </Link>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 };

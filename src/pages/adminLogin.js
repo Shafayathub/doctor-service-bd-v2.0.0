@@ -66,7 +66,7 @@ const AdminLogin = () => {
                 </Link>
               </label>
             </div>
-            {error && toast(error?.message)}
+            {error && alert(error?.message)}
             <div className="form-control mt-6">
               <button className="btn btn-primary">Login</button>
             </div>

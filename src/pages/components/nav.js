@@ -34,10 +34,10 @@ const Nav = () => {
           <ul
             tabIndex={0}
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-            <li>
+            <li whileHover={{ scale: 1.2 }}>
               <Link href={'/allDoctors'}>Doctors</Link>
             </li>
-            <li>
+            <li whileHover={{ scale: 1.2 }}>
               <Link href={'/allDiagnostics'}>Diagnostics</Link>
             </li>
             {user && (
@@ -50,7 +50,7 @@ const Nav = () => {
                 </li>
               </>
             )}
-            <li>
+            <li whileHover={{ scale: 1.2 }}>
               <Link href={'/about'}>About Us</Link>
             </li>
           </ul>
@@ -61,10 +61,10 @@ const Nav = () => {
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
-          <li>
+          <li whileHover={{ scale: 1.2 }}>
             <Link href={'/allDoctors'}>Doctors</Link>
           </li>
-          <li>
+          <li whileHover={{ scale: 1.2 }}>
             <Link href={'/allDiagnostics'}>Diagnostics</Link>
           </li>
           {user && (
@@ -77,7 +77,7 @@ const Nav = () => {
               </li>
             </>
           )}
-          <li>
+          <li whileHover={{ scale: 1.2 }}>
             <Link href={'/about'}>About Us</Link>
           </li>
         </ul>

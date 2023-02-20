@@ -5,7 +5,6 @@ const AddDoctor = () => {
     event.preventDefault();
     const form = event.target;
     const name = form.name.value;
-    const img = form.img.value;
     const speciality = form.speciality.value;
     const degree = form.degree.value;
     const hospital = form.hospital.value;
@@ -13,27 +12,45 @@ const AddDoctor = () => {
     const visiting = form.visiting.value;
     const appoinment = form.appoinment.value;
     const about = form.about.value;
-    const newDoctor = {
-      name,
-      img,
-      speciality,
-      degree,
-      hospital,
-      chamber,
-      visiting,
-      appoinment,
-      about,
-    };
-    const url = 'https://server.doctorservicebd.com/doctor';
-    fetch(url, {
+    const image = form.img.files[0];
+    const data = new FormData();
+    data.append('file', image);
+    data.append('upload_preset', 'g0qu4roj');
+    data.append('cloud_name', 'dceli63sq');
+    fetch('https://api.cloudinary.com/v1_1/dceli63sq/image/upload', {
       method: 'POST',
-      headers: { 'content-type': 'application/json' },
-      body: JSON.stringify(newDoctor),
+      body: data,
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((imgData) => {
+        if (imgData.asset_id) {
+          const newDoctor = {
+            name,
+            img: imgData?.secure_url,
+            speciality,
+            degree,
+            hospital,
+            chamber,
+            visiting,
+            appoinment,
+            about,
+          };
 
-    event.target.reset();
+          const url = 'https://server.doctorservicebd.com/doctor';
+          fetch(url, {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(newDoctor),
+          })
+            .then((res) => res.json())
+            .then((data) => console.log(data));
+
+          event.target.reset();
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
   return (
     <div className="flex justify-center items-center">
@@ -55,10 +72,10 @@ const AddDoctor = () => {
 
           <div className="form-control">
             <label className="label">
-              <span className="label-text">Image link</span>
+              <span className="label-text">Image</span>
             </label>
             <input
-              type="text"
+              type="file"
               name="img"
               placeholder="Doctor img link from img.bb"
               className="input input-bordered"
@@ -121,18 +138,6 @@ const AddDoctor = () => {
               type="text"
               name="visiting"
               placeholder="Visiting hours"
-              className="input input-bordered"
-              required
-            />
-          </div>
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Appoinment Phone no.</span>
-            </label>
-            <input
-              type="text"
-              name="appoinment"
-              placeholder="Phone no for serial"
               className="input input-bordered"
               required
             />

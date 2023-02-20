@@ -11,7 +11,9 @@ const Diagnostics = () => {
   }, []);
   return (
     <section>
-      <h2 className="text-center font-semibold text-2xl my-2">Diagnostics</h2>
+      <h2 className="text-center font-semibold text-2xl my-2 text-primary">
+        Diagnostics
+      </h2>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
         {diagnostics.map((diagnostic) => (
           <Diagnostic key={diagnostic._id} diagnostic={diagnostic}></Diagnostic>
@@ -19,7 +21,7 @@ const Diagnostics = () => {
       </div>
       <div className="flex justify-center m-2">
         <Link href={'/allDiagnostics'}>
-          <button className="btn btn-wide">See All</button>
+          <button className="btn btn-link">See All</button>
         </Link>
       </div>
     </section>

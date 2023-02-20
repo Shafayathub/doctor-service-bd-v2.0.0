@@ -26,12 +26,15 @@ const About = () => {
             className="md:w-1/2 rounded-lg shadow-2xl"
           />
           <div>
-            <h1 className="text-5xl font-bold">Doctor Service BD</h1>
+            <h1 className="text-5xl font-bold text-primary-focus">
+              Doctor Service BD
+            </h1>
             <p className="py-6">
               We are committed to serve you with better Health Care. Welcome to
               you our Doctor Service BD website to take the services and serial
               of all expert and experienced doctors in Rajshahi. <br />
-              Whats-App: +8801723-025514
+              <span className="text-secondary-focus">Whats-App:</span>
+              +8801723-025514
             </p>
             <Link href="tel:+8801723-025514" className="btn">
               Call Us

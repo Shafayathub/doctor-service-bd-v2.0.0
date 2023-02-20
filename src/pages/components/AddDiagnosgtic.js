@@ -5,26 +5,41 @@ const AddDiagnosgtic = () => {
     event.preventDefault();
     const form = event.target;
     const name = form.name.value;
-    const img = form.img.value;
     const address = form.address.value;
     const appoinment = form.appoinment.value;
-
-    const newdiagnostic = {
-      name,
-      img,
-      address,
-      appoinment,
-    };
-    const url = 'https://server.doctorservicebd.com/diagnostic';
-    fetch(url, {
+    const image = form.img.files[0];
+    const data = new FormData();
+    data.append('file', image);
+    data.append('upload_preset', 'g0qu4roj');
+    data.append('cloud_name', 'dceli63sq');
+    fetch('https://api.cloudinary.com/v1_1/dceli63sq/image/upload', {
       method: 'POST',
-      headers: { 'content-type': 'application/json' },
-      body: JSON.stringify(newdiagnostic),
+      body: data,
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((imgData) => {
+        if (imgData.asset_id) {
+          const newdiagnostic = {
+            name,
+            img: imgData?.secure_url,
+            address,
+            appoinment,
+          };
+          const url = 'https://server.doctorservicebd.com/diagnostic';
+          fetch(url, {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(newdiagnostic),
+          })
+            .then((res) => res.json())
+            .then((data) => console.log(data));
 
-    event.target.reset();
+          event.target.reset();
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
   return (
     <div className="flex justify-center items-center">
@@ -46,10 +61,10 @@ const AddDiagnosgtic = () => {
 
           <div className="form-control">
             <label className="label">
-              <span className="label-text">Image link</span>
+              <span className="label-text">Image</span>
             </label>
             <input
-              type="text"
+              type="file"
               name="img"
               placeholder="diagnostic img link from img.bb"
               className="input input-bordered"

@@ -32,7 +32,9 @@ const AllDoctors = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="bg-base-100 p-5">
-        <h2 className="text-center font-semibold text-3xl">Doctors</h2>
+        <h2 className="text-center font-semibold text-3xl text-primary">
+          Doctors
+        </h2>
         <div className="flex justify-center items-center m-3">
           <form className="form-control w-full max-w-xs">
             <div onChange={handleSubmit} className="input-group mx-5">

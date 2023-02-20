@@ -24,8 +24,14 @@ export default function Home() {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
+        {/* -------------- */}
+        <meta
+          name="google-site-verification"
+          content="7z3ewncoGPwkXYRsNxDvkUAWKeTCaJ_TXFOvux_mp2k"
+        />
       </Head>
-      <main>
+
+      <main className="px-5">
         {/* Banner */}
         <Carousel autoPlay infiniteLoop>
           <div>

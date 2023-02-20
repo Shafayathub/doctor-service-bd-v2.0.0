@@ -10,7 +10,6 @@ const AddDoctor = () => {
     const hospital = form.hospital.value;
     const chamber = form.chamber.value;
     const visiting = form.visiting.value;
-    const appoinment = form.appoinment.value;
     const about = form.about.value;
     const image = form.img.files[0];
     const data = new FormData();
@@ -32,7 +31,6 @@ const AddDoctor = () => {
             hospital,
             chamber,
             visiting,
-            appoinment,
             about,
           };
 

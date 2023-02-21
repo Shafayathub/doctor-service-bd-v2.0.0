@@ -5,7 +5,7 @@ const Diagnostic = ({ diagnostic }) => {
   return (
     <div whileHover={{ scale: 1.05 }}>
       <div className="card card-side bg-base-100 shadow-xl h-80">
-        <figure className="pl-2 h-56 max-w-xs">
+        <figure className="pl-2 h-56">
           <Image
             className="rounded-lg"
             width={240}

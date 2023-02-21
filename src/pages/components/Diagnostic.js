@@ -4,7 +4,7 @@ import React from 'react';
 const Diagnostic = ({ diagnostic }) => {
   return (
     <div whileHover={{ scale: 1.05 }}>
-      <div className="card card-side bg-base-100 shadow-xl h-60">
+      <div className="card card-side bg-base-100 shadow-xl h-80">
         <figure className="pl-2 h-56 max-w-xs">
           <Image
             className="rounded-lg"

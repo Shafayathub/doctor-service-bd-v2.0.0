@@ -14,6 +14,12 @@ const Footer = () => {
         <div>
           <span className="footer-title">Company</span>
           <Link href={'/about'}>About Us</Link>
+          <Link
+            href={'https://www.linkedin.com/in/md-shafayat-islam-97000110b/'}
+            target="_blank"
+            rel="referrer">
+            Developer
+          </Link>
         </div>
         <div>
           <span className="footer-title">Legal</span>

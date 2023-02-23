@@ -1,11 +1,14 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const Doctor = ({ doctor }) => {
   return (
     <div>
-      <div className="card card-side bg-base-100 shadow-xl">
+      <motion.div
+        whileHover={{ scale: 1.1 }}
+        className="card card-side bg-base-100 shadow-xl">
         <figure className="pl-2 h-72">
           <Image
             className="rounded-xl max-w-xs"
@@ -20,16 +23,16 @@ const Doctor = ({ doctor }) => {
           <p className="text-sm">{doctor?.degree}</p>
           <div className="card-actions justify-end">
             <Link href={`/doctorDetails/${doctor?._id}`}>
-              <button
+              <motion.button
                 whileTap={{ scale: 1.2 }}
                 whileHover={{ scale: 1.2 }}
                 className="btn btn-primary text-white">
                 Details
-              </button>
+              </motion.button>
             </Link>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

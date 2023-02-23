@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import Diagnostic from './Diagnostic';
+import { motion } from 'framer-motion';
 
 const Diagnostics = () => {
   const [diagnostics, setDiagnostics] = useState([]);
@@ -21,7 +22,9 @@ const Diagnostics = () => {
       </div>
       <div className="flex justify-center m-2">
         <Link href={'/allDiagnostics'}>
-          <button className="btn btn-link">See All</button>
+          <motion.button whileHover={{ scale: 1.2 }} className="btn btn-link">
+            See All
+          </motion.button>
         </Link>
       </div>
     </section>

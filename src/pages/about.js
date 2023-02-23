@@ -33,7 +33,7 @@ const About = () => {
               We are committed to serve you with better Health Care. Welcome to
               you our Doctor Service BD website to take the services and serial
               of all expert and experienced doctors in Rajshahi. <br />
-              <span className="text-secondary-focus">Whats-App:</span>
+              <span className="text-secondary-focus text-xl">Whats-App:</span>
               +8801723-025514
             </p>
             <Link href="tel:+8801723-025514" className="btn">

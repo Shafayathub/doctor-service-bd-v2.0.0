@@ -76,7 +76,7 @@ const AddDoctor = () => {
               type="file"
               name="img"
               placeholder="Doctor img link from img.bb"
-              className="input input-bordered"
+              className="file-input file-input-bordered file-input-primary w-full"
               required
             />
           </div>

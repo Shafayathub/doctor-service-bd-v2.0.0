@@ -1,13 +1,14 @@
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import Doctor from './Doctor';
+import { motion } from 'framer-motion';
 
 const Doctors = () => {
   const [doctors, setDoctors] = useState([]);
   useEffect(() => {
     fetch('https://server.doctorservicebd.com/doctor')
       .then((res) => res.json())
-      .then((data) => setDoctors(data.slice(0, 3)));
+      .then((data) => setDoctors(data.slice(0, 6)));
   }, []);
   return (
     <section>
@@ -21,7 +22,9 @@ const Doctors = () => {
       </div>
       <div className="flex justify-center m-2">
         <Link href={'/allDoctors'}>
-          <button className="btn btn-link">See All</button>
+          <motion.button whileHover={{ scale: 1.2 }} className="btn btn-link">
+            See All
+          </motion.button>
         </Link>
       </div>
     </section>

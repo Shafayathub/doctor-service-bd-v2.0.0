@@ -3,6 +3,7 @@ import Link from 'next/link';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase/firebase.config';
+import { motion } from 'framer-motion';
 
 const Nav = () => {
   const [user] = useAuthState(auth);
@@ -34,12 +35,21 @@ const Nav = () => {
           <ul
             tabIndex={0}
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-            <li whileHover={{ scale: 1.2 }}>
+            <motion.li whileHover={{ scale: 1.2 }}>
               <Link href={'/allDoctors'}>Doctors</Link>
-            </li>
-            <li whileHover={{ scale: 1.2 }}>
+            </motion.li>
+            <motion.li whileHover={{ scale: 1.2 }}>
               <Link href={'/allDiagnostics'}>Diagnostics</Link>
-            </li>
+            </motion.li>
+            <motion.li whileHover={{ scale: 1.2 }}>
+              <Link href={'/Ambulance'}>Ambulance</Link>
+            </motion.li>
+            <motion.li whileHover={{ scale: 1.2 }}>
+              <Link href={'/BloodDonor'}>Blood Donor</Link>
+            </motion.li>
+            <motion.li whileHover={{ scale: 1.2 }}>
+              <Link href={'/physioTherapy'}>Physio Therapy</Link>
+            </motion.li>
             {user && (
               <>
                 <li>
@@ -50,9 +60,9 @@ const Nav = () => {
                 </li>
               </>
             )}
-            <li whileHover={{ scale: 1.2 }}>
+            <motion.li whileHover={{ scale: 1.2 }}>
               <Link href={'/about'}>About Us</Link>
-            </li>
+            </motion.li>
           </ul>
         </div>
         <Link href="/" className="btn btn-ghost normal-case text-xl">
@@ -61,25 +71,44 @@ const Nav = () => {
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
-          <li whileHover={{ scale: 1.2 }}>
+          <motion.li whileHover={{ scale: 1.2 }}>
             <Link href={'/allDoctors'}>Doctors</Link>
-          </li>
-          <li whileHover={{ scale: 1.2 }}>
+          </motion.li>
+          <motion.li whileHover={{ scale: 1.2 }}>
             <Link href={'/allDiagnostics'}>Diagnostics</Link>
-          </li>
+          </motion.li>
+          <motion.li whileHover={{ scale: 1.2 }}>
+            <Link href={'/Ambulance'}>Ambulance</Link>
+          </motion.li>
+          <motion.li whileHover={{ scale: 1.2 }}>
+            <Link href={'/BloodDonor'}>Blood Donor</Link>
+          </motion.li>
+          <motion.li whileHover={{ scale: 1.2 }}>
+            <Link href={'/physioTherapy'}>Physio Therapy</Link>
+          </motion.li>
+
+          <motion.li whileHover={{ scale: 1.2 }}>
+            <Link href={'/about'}>About Us</Link>
+          </motion.li>
           {user && (
             <>
-              <li>
-                <Link href={'/manageDoctors'}>Manage Doctors</Link>
-              </li>
-              <li>
-                <Link href={'/manageDiagnostics'}>Manage Diagnostics</Link>
-              </li>
+              <div className="dropdown dropdown-hover">
+                <label tabIndex={0} className="btn btn-outline">
+                  Manage
+                </label>
+                <ul
+                  tabIndex={0}
+                  className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+                  <motion.li whileHover={{ scale: 1.2 }}>
+                    <Link href={'/manageDoctors'}>Manage Doctors</Link>
+                  </motion.li>
+                  <motion.li whileHover={{ scale: 1.2 }}>
+                    <Link href={'/manageDiagnostics'}>Manage Diagnostics</Link>
+                  </motion.li>
+                </ul>
+              </div>
             </>
           )}
-          <li whileHover={{ scale: 1.2 }}>
-            <Link href={'/about'}>About Us</Link>
-          </li>
         </ul>
       </div>
       <div className="navbar-end">

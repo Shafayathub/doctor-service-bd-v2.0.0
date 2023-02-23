@@ -4,20 +4,13 @@ import Doctor from './components/Doctor';
 
 const AllDoctors = () => {
   const [doctors, setDoctors] = useState([]);
-  const [query, setQuery] = useState('');
+
   useEffect(() => {
     fetch('https://server.doctorservicebd.com/doctor')
       .then((res) => res.json())
       .then((data) => setDoctors(data));
-  }, [query]);
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    setQuery(event.target.value);
-    const search = doctors.filter((doctor) =>
-      doctor.speciality.toLowerCase().includes(query)
-    );
-    setDoctors(search);
-  };
+  }, []);
+
   return (
     <>
       <Head>
@@ -35,7 +28,7 @@ const AllDoctors = () => {
         <h2 className="text-center font-semibold text-3xl text-primary">
           Doctors
         </h2>
-        <div className="flex justify-center items-center m-3">
+        {/* <div className="flex justify-center items-center m-3">
           <form className="form-control w-full max-w-xs">
             <div onChange={handleSubmit} className="input-group mx-5">
               <input
@@ -60,7 +53,7 @@ const AllDoctors = () => {
               </button>
             </div>
           </form>
-        </div>
+        </div> */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
           {doctors.map((doctor) => (
             <Doctor key={doctor._id} doctor={doctor}></Doctor>

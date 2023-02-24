@@ -16,7 +16,7 @@ const Cardiology = () => {
   return (
     <>
       <Head>
-        <title>Medicine | Doctor | Doctor Service BD</title>
+        <title>Cardiology | Doctor | Doctor Service BD</title>
         <meta
           name="description"
           content="Doctor Service BD. We are committed to serve you with better Health Care. Welcome to

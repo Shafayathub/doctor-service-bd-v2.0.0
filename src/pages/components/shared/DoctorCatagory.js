@@ -81,6 +81,118 @@ const DoctorCatagory = () => {
             Colorectal
           </motion.button>
         </Link>
+        <Link href={'/Doctors/Diabetes'}>
+          <motion.button
+            whileHover={{ scale: 1.2 }}
+            className="btn btn-outline btn-sm btn-primary mr-2 mb-2">
+            Diabetes
+          </motion.button>
+        </Link>
+        <Link href={'/Doctors/ENT'}>
+          <motion.button
+            whileHover={{ scale: 1.2 }}
+            className="btn btn-outline btn-sm btn-primary mr-2 mb-2">
+            ENT
+          </motion.button>
+        </Link>
+        <Link href={'/Doctors/Eye'}>
+          <motion.button
+            whileHover={{ scale: 1.2 }}
+            className="btn btn-outline btn-sm btn-primary mr-2 mb-2">
+            Eye
+          </motion.button>
+        </Link>
+        <Link href={'/Doctors/Gastroenterology'}>
+          <motion.button
+            whileHover={{ scale: 1.2 }}
+            className="btn btn-outline btn-sm btn-primary mr-2 mb-2">
+            Gastroenterology
+          </motion.button>
+        </Link>
+        <Link href={'/Doctors/Surgery'}>
+          <motion.button
+            whileHover={{ scale: 1.2 }}
+            className="btn btn-outline btn-sm btn-primary mr-2 mb-2">
+            Surgeon
+          </motion.button>
+        </Link>
+        <Link href={'/Doctors/Hematology'}>
+          <motion.button
+            whileHover={{ scale: 1.2 }}
+            className="btn btn-outline btn-sm btn-primary mr-2 mb-2">
+            Hematology
+          </motion.button>
+        </Link>
+        <Link href={'/Doctors/Kidney'}>
+          <motion.button
+            whileHover={{ scale: 1.2 }}
+            className="btn btn-outline btn-sm btn-primary mr-2 mb-2">
+            Kidney
+          </motion.button>
+        </Link>
+        <Link href={'/Doctors/Liver'}>
+          <motion.button
+            whileHover={{ scale: 1.2 }}
+            className="btn btn-outline btn-sm btn-primary mr-2 mb-2">
+            Liver
+          </motion.button>
+        </Link>
+        <Link href={'/Doctors/Neurology'}>
+          <motion.button
+            whileHover={{ scale: 1.2 }}
+            className="btn btn-outline btn-sm btn-primary mr-2 mb-2">
+            Neurology
+          </motion.button>
+        </Link>
+        <Link href={'/Doctors/Neurosurgery'}>
+          <motion.button
+            whileHover={{ scale: 1.2 }}
+            className="btn btn-outline btn-sm btn-primary mr-2 mb-2">
+            Neuro Surgeon
+          </motion.button>
+        </Link>
+        <Link href={'/Doctors/Orthopedic'}>
+          <motion.button
+            whileHover={{ scale: 1.2 }}
+            className="btn btn-outline btn-sm btn-primary mr-2 mb-2">
+            Orthopedic
+          </motion.button>
+        </Link>
+        <Link href={'/Doctors/Pediatric'}>
+          <motion.button
+            whileHover={{ scale: 1.2 }}
+            className="btn btn-outline btn-sm btn-primary mr-2 mb-2">
+            Pediatric
+          </motion.button>
+        </Link>
+        <Link href={'/Doctors/Psychiatry'}>
+          <motion.button
+            whileHover={{ scale: 1.2 }}
+            className="btn btn-outline btn-sm btn-primary mr-2 mb-2">
+            Psychiatry
+          </motion.button>
+        </Link>
+        <Link href={'/Doctors/Skin'}>
+          <motion.button
+            whileHover={{ scale: 1.2 }}
+            className="btn btn-outline btn-sm btn-primary mr-2 mb-2">
+            Skin
+          </motion.button>
+        </Link>
+        <Link href={'/Doctors/Sexual'}>
+          <motion.button
+            whileHover={{ scale: 1.2 }}
+            className="btn btn-outline btn-sm btn-primary mr-2 mb-2">
+            Sexual
+          </motion.button>
+        </Link>
+        <Link href={'/Doctors/Urology'}>
+          <motion.button
+            whileHover={{ scale: 1.2 }}
+            className="btn btn-outline btn-sm btn-primary mr-2 mb-2">
+            Urology
+          </motion.button>
+        </Link>
       </div>
     </section>
   );

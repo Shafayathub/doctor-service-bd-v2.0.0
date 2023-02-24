@@ -3,20 +3,20 @@ import React, { useEffect, useState } from 'react';
 import Doctor from '../components/Doctor';
 import DoctorCatagory from '../components/shared/DoctorCatagory';
 
-const Cancer = () => {
+const Eye = () => {
   const [doctors, setDoctors] = useState([]);
   useEffect(() => {
     fetch('http://localhost:5000/doctor')
       .then((res) => res.json())
       .then((data) => setDoctors(data));
   }, []);
-  const cancerDoctor = doctors.filter((doctor) =>
-    doctor.speciality.toLowerCase().includes('cancer')
+  const eyeDoctor = doctors.filter((doctor) =>
+    doctor.speciality.toLowerCase().includes('eye')
   );
   return (
     <>
       <Head>
-        <title>Cancer | Doctor | Doctor Service BD</title>
+        <title>Eye | Doctor | Doctor Service BD</title>
         <meta
           name="description"
           content="Doctor Service BD. We are committed to serve you with better Health Care. Welcome to
@@ -29,7 +29,7 @@ const Cancer = () => {
       <main className="min-h-screen p-5">
         <DoctorCatagory></DoctorCatagory>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
-          {cancerDoctor.map((doctor) => (
+          {eyeDoctor.map((doctor) => (
             <Doctor key={doctor._id} doctor={doctor}></Doctor>
           ))}
         </div>
@@ -38,4 +38,4 @@ const Cancer = () => {
   );
 };
 
-export default Cancer;
+export default Eye;

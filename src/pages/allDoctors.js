@@ -1,21 +1,18 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import Doctor from './components/Doctor';
+import DoctorCatagory from './components/shared/DoctorCatagory';
 
 const AllDoctors = () => {
   const [doctors, setDoctors] = useState([]);
-  const router = useRouter();
+  // const router = useRouter();
   useEffect(() => {
     fetch('https://server.doctorservicebd.com/doctor')
       .then((res) => res.json())
       .then((data) => setDoctors(data));
   }, []);
-  const handleSelect = (e) => {
-    e.preventDefault();
-    console.log(e.target.selected.value);
-    router.push(`/Doctors/${e.target.selected.value}`);
-  };
 
   return (
     <>
@@ -31,31 +28,11 @@ const AllDoctors = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="bg-base-100 p-5">
-        <h2 className="text-center font-semibold text-3xl text-primary">
-          Doctors
+        <h2 className="text-center font-semibold text-2xl lg:text-3xl text-primary">
+          Doctors | Doctor Service BD
         </h2>
-        <div className="flex justify-center items-center m-3">
-          <div className="pr-10">
-            <form
-              onSubmit={handleSelect}
-              className="form-control input-group mx-5">
-              <select
-                name="selected"
-                className="select select-primary w-full max-w-xs">
-                <option disabled selected>
-                  Select Speciality and submit
-                </option>
-                <option>Medicine</option>
-                <option>Gynecology</option>
-                <option>Anesthesiology</option>
-                <option>Dental</option>
-              </select>
-              <button className="form-control mt-2 btn btn-outline btn-primary w-full max-w-xs">
-                submit
-              </button>
-            </form>
-          </div>
-        </div>
+        <DoctorCatagory></DoctorCatagory>
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
           {doctors.map((doctor) => (
             <Doctor key={doctor._id} doctor={doctor}></Doctor>

@@ -1,5 +1,7 @@
 import Head from 'next/head';
+import Image from 'next/image';
 import React from 'react';
+import blood from '../images/Blood-donation.gif';
 import CommingSoon from './components/shared/CommingSoon';
 
 const BloodDonor = () => {
@@ -18,6 +20,9 @@ const BloodDonor = () => {
       </Head>
       <main>
         <CommingSoon></CommingSoon>
+        <div className="flex justify-center items-center min-h-screen">
+          <Image src={blood} alt="Blood Donor | Doctor Service BD"></Image>
+        </div>
       </main>
     </>
   );

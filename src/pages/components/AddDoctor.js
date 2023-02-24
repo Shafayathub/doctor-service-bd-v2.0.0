@@ -34,7 +34,7 @@ const AddDoctor = () => {
             about,
           };
 
-          const url = 'https://server.doctorservicebd.com/doctor';
+          const url = 'http://localhost:5000/doctor';
           fetch(url, {
             method: 'POST',
             headers: { 'content-type': 'application/json' },

@@ -25,7 +25,7 @@ const AddDiagnosgtic = () => {
             address,
             appoinment,
           };
-          const url = 'https://server.doctorservicebd.com/diagnostic';
+          const url = 'http://localhost:5000/diagnostic';
           fetch(url, {
             method: 'POST',
             headers: { 'content-type': 'application/json' },

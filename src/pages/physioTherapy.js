@@ -1,6 +1,8 @@
 import Head from 'next/head';
+import Image from 'next/image';
 import React from 'react';
 import CommingSoon from './components/shared/CommingSoon';
+import therapy from '../images/Phisiotherapy.gif';
 
 const physioTherapy = () => {
   return (
@@ -18,6 +20,9 @@ const physioTherapy = () => {
       </Head>
       <main>
         <CommingSoon></CommingSoon>
+        <div className="flex justify-center items-center min-h-screen">
+          <Image src={therapy} alt="Blood Donor | Doctor Service BD"></Image>
+        </div>
       </main>
     </>
   );

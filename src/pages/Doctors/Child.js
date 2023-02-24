@@ -3,20 +3,20 @@ import React, { useEffect, useState } from 'react';
 import Doctor from '../components/Doctor';
 import DoctorCatagory from '../components/shared/DoctorCatagory';
 
-const Anesthesiology = () => {
+const Child = () => {
   const [doctors, setDoctors] = useState([]);
   useEffect(() => {
     fetch('http://localhost:5000/doctor')
       .then((res) => res.json())
       .then((data) => setDoctors(data));
   }, []);
-  const anesthesiologyDoctor = doctors.filter((doctor) =>
-    doctor.speciality.toLowerCase().includes('anesthesiology')
+  const childDoctor = doctors.filter((doctor) =>
+    doctor.speciality.toLowerCase().includes('child')
   );
   return (
     <>
       <Head>
-        <title>Anesthesiology | Doctor | Doctor Service BD</title>
+        <title>Medicine | Doctor | Doctor Service BD</title>
         <meta
           name="description"
           content="Doctor Service BD. We are committed to serve you with better Health Care. Welcome to
@@ -29,7 +29,7 @@ const Anesthesiology = () => {
       <main className="min-h-screen p-5">
         <DoctorCatagory></DoctorCatagory>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
-          {anesthesiologyDoctor.map((doctor) => (
+          {childDoctor.map((doctor) => (
             <Doctor key={doctor._id} doctor={doctor}></Doctor>
           ))}
         </div>
@@ -38,4 +38,4 @@ const Anesthesiology = () => {
   );
 };
 
-export default Anesthesiology;
+export default Child;

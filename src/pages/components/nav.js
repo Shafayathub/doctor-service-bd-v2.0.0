@@ -20,16 +20,14 @@ const Nav = () => {
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
               fill="none"
               viewBox="0 0 24 24"
-              stroke="currentColor">
+              className="inline-block w-5 h-5 stroke-current">
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
-                d="M4 6h16M4 12h8m-8 6h16"
-              />
+                d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
           </label>
           <ul
@@ -50,6 +48,13 @@ const Nav = () => {
             <motion.li whileHover={{ scale: 1.2 }}>
               <Link href={'/physioTherapy'}>Physio Therapy</Link>
             </motion.li>
+
+            <motion.li whileHover={{ scale: 1.2 }}>
+              <Link href={'/blogs'}>Blogs</Link>
+            </motion.li>
+            <motion.li whileHover={{ scale: 1.2 }}>
+              <Link href={'/about'}>About Us</Link>
+            </motion.li>
             {user && (
               <>
                 <li>
@@ -60,9 +65,6 @@ const Nav = () => {
                 </li>
               </>
             )}
-            <motion.li whileHover={{ scale: 1.2 }}>
-              <Link href={'/about'}>About Us</Link>
-            </motion.li>
           </ul>
         </div>
         <Link href="/" className="btn btn-ghost normal-case text-xl">
@@ -87,6 +89,9 @@ const Nav = () => {
             <Link href={'/physioTherapy'}>Physio Therapy</Link>
           </motion.li>
 
+          <motion.li whileHover={{ scale: 1.2 }}>
+            <Link href={'/blogs'}>Blogs</Link>
+          </motion.li>
           <motion.li whileHover={{ scale: 1.2 }}>
             <Link href={'/about'}>About Us</Link>
           </motion.li>

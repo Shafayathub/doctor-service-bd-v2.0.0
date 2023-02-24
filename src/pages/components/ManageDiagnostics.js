@@ -4,7 +4,7 @@ import ManageDiagTableRow from './ManageDiagTableRow';
 const ManageDiagnostics = () => {
   const [diagnostics, setDiagnostics] = useState([]);
   useEffect(() => {
-    fetch('https://server.doctorservicebd.com/diagnostic')
+    fetch('http://localhost:5000/diagnostic')
       .then((res) => res.json())
       .then((data) => setDiagnostics(data));
   }, [diagnostics]);

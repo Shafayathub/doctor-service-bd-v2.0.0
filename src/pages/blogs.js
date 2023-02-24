@@ -1,10 +1,10 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import React from 'react';
-import ambulance from '../images/Ambulance.gif';
 import CommingSoon from './components/shared/CommingSoon';
+import blogGif from '../images/Blog.gif';
 
-const Ambulance = () => {
+const blogs = () => {
   return (
     <>
       <Head>
@@ -21,11 +21,11 @@ const Ambulance = () => {
       <main>
         <CommingSoon></CommingSoon>
         <div className="flex justify-center items-center min-h-screen">
-          <Image src={ambulance} alt="Ambulance | Doctor Service BD"></Image>
+          <Image src={blogGif} alt="Blood Donor | Doctor Service BD"></Image>
         </div>
       </main>
     </>
   );
 };
 
-export default Ambulance;
+export default blogs;

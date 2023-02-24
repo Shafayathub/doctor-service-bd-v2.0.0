@@ -4,14 +4,14 @@ import React, { useEffect, useState } from 'react';
 const ManageDiagTableRow = ({ diagnostic }) => {
   const [diagnostics, setDiagnostics] = useState([]);
   useEffect(() => {
-    fetch('https://server.doctorservicebd.com/diagnostic')
+    fetch('http://localhost:5000/diagnostic')
       .then((res) => res.json())
       .then((data) => setDiagnostics(data));
   }, []);
   const handleRemove = (id) => {
     const proceed = window.confirm('Are you sure?');
     if (proceed) {
-      const url = `https://server.doctorservicebd.com/diagnostic/${id}`;
+      const url = `http://localhost:5000/diagnostic/${id}`;
       fetch(url, {
         method: 'DELETE',
       })

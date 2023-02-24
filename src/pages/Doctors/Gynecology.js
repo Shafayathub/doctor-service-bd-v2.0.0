@@ -6,7 +6,7 @@ import DoctorCatagory from '../components/shared/DoctorCatagory';
 const Gynecology = () => {
   const [doctors, setDoctors] = useState([]);
   useEffect(() => {
-    fetch('http://localhost:5000/doctor')
+    fetch('https://server.doctorservicebd.com/doctor')
       .then((res) => res.json())
       .then((data) => setDoctors(data));
   }, []);

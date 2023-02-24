@@ -13,7 +13,7 @@ const Diagnostics = () => {
   return (
     <section>
       <h2 className="text-center font-semibold text-2xl my-2 text-primary">
-        Diagnostics
+        Diagnostics - Doctor Service BD
       </h2>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
         {diagnostics.map((diagnostic) => (

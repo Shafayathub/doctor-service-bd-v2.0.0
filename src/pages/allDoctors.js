@@ -29,7 +29,7 @@ const AllDoctors = () => {
       </Head>
       <main className="bg-base-100 p-5">
         <h2 className="text-center font-semibold text-2xl lg:text-3xl text-primary">
-          Doctors | Doctor Service BD
+          Doctors - Doctor Service BD
         </h2>
         <DoctorCatagory></DoctorCatagory>
 

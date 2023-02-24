@@ -6,7 +6,7 @@ const DoctorCatagory = () => {
   return (
     <section className="mt-5 mb-2">
       <h2 className="text-center text-xl font-semibold mb-2 text-primary">
-        Specialists-Doctor Service BD
+        Specialists - Doctor Service BD
       </h2>
       <div>
         <Link href={'/Doctors/Dental'}>

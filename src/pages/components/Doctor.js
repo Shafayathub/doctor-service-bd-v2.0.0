@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 const Doctor = ({ doctor }) => {
   return (
-    <div>
+    <section>
       <motion.div
         whileHover={{ scale: 1.1 }}
         className="card card-side bg-base-100 shadow-xl">
@@ -33,7 +33,7 @@ const Doctor = ({ doctor }) => {
           </div>
         </div>
       </motion.div>
-    </div>
+    </section>
   );
 };
 

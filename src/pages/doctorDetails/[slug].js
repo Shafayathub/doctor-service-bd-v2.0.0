@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 import Link from 'next/link';
+import AppointmentForm from '../components/AppointmentForm';
 const Slug = () => {
   const router = useRouter();
   const { slug } = router.query;
@@ -16,7 +17,7 @@ const Slug = () => {
     doctor;
   return (
     <>
-      <section className="hero min-h-screen bg-base-100 shadow-xl">
+      <section className="hero bg-base-100 shadow-xl">
         <div className="hero-content flex-col lg:flex-row">
           <Image
             width={1440}
@@ -41,6 +42,9 @@ const Slug = () => {
           </div>
         </div>
       </section>
+      <div>
+        <AppointmentForm></AppointmentForm>
+      </div>
     </>
   );
 };

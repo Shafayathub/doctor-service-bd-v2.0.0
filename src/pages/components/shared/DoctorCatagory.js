@@ -127,7 +127,7 @@ const DoctorCatagory = () => {
           <motion.button
             whileHover={{ scale: 1.2 }}
             className="btn btn-outline btn-sm btn-primary mr-2 mb-2">
-            Kidney
+            Nephrology
           </motion.button>
         </Link>
         <Link href={'/Doctors/Liver'}>

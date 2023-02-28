@@ -43,10 +43,10 @@ const Nav = () => {
               <Link href={'/Ambulance'}>Ambulance</Link>
             </motion.li>
             <motion.li whileHover={{ scale: 1.2 }}>
-              <Link href={'/BloodDonor'}>Blood Donor</Link>
+              <Link href={'/BloodDonor'}>Find Blood</Link>
             </motion.li>
             <motion.li whileHover={{ scale: 1.2 }}>
-              <Link href={'/physioTherapy'}>Physio Therapy</Link>
+              <Link href={'/physioTherapy'}>Physiotherapy</Link>
             </motion.li>
 
             <motion.li whileHover={{ scale: 1.2 }}>
@@ -83,10 +83,10 @@ const Nav = () => {
             <Link href={'/Ambulance'}>Ambulance</Link>
           </motion.li>
           <motion.li whileHover={{ scale: 1.2 }}>
-            <Link href={'/BloodDonor'}>Blood Donor</Link>
+            <Link href={'/BloodDonor'}>Find Blood</Link>
           </motion.li>
           <motion.li whileHover={{ scale: 1.2 }}>
-            <Link href={'/physioTherapy'}>Physio Therapy</Link>
+            <Link href={'/physioTherapy'}>Physiotherapy</Link>
           </motion.li>
 
           <motion.li whileHover={{ scale: 1.2 }}>
@@ -122,8 +122,13 @@ const Nav = () => {
             Log Out
           </button>
         ) : (
-          <Link href="tel:+8801723-025514" className="btn">
-            Call Us
+          <Link href="tel:+8801723-025514" className="">
+            <motion.button
+              whileHover={{ scale: 1.2 }}
+              className="btn btn-sm lg:btn-md btn-success lg:btn-wide hover:btn-outline text-white tooltip tooltip-bottom"
+              data-tip="01723025514">
+              Call Us
+            </motion.button>
           </Link>
         )}
       </div>

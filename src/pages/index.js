@@ -41,7 +41,7 @@ export default function Home() {
               src={banner1}
               alt="Doctor Service BD"
             />
-            <p className="legend">Doctors</p>
+            {/* <p className="legend">Doctors</p> */}
           </div>
           <div>
             <Image
@@ -50,7 +50,7 @@ export default function Home() {
               src={banner2}
               alt="Doctor Service BD"
             />
-            <p className="legend">Diagnostics</p>
+            {/* <p className="legend">Diagnostics</p> */}
           </div>
           <div>
             <Image
@@ -59,9 +59,10 @@ export default function Home() {
               src={banner3}
               alt="Doctor Service BD"
             />
-            <p className="legend">Ambulance</p>
+            {/* <p className="legend">Ambulance</p> */}
           </div>
         </Carousel>
+        <hr />
         <Doctors></Doctors>
         <hr />
         <Diagnostics></Diagnostics>

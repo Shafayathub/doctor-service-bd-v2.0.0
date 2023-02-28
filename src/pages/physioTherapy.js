@@ -8,7 +8,7 @@ const physioTherapy = () => {
   return (
     <>
       <Head>
-        <title>Physio Therapy | Doctor Service BD</title>
+        <title>Physiotherapy | Doctor Service BD</title>
         <meta
           name="description"
           content="Doctor Service BD. We are committed to serve you with better Health Care. Welcome to

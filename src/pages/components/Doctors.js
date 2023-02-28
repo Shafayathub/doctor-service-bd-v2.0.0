@@ -12,8 +12,8 @@ const Doctors = () => {
   }, []);
   return (
     <section>
-      <h2 className="text-center font-semibold text-2xl my-2 text-primary">
-        Doctors - Doctor Service BD
+      <h2 className="text-center font-semibold lg:font-bold text-2xl lg:text-3xl my-2 mb-5 text-success">
+        DOCTORS - DOCTOR SERVICE BD
       </h2>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
         {doctors.map((doctor) => (
@@ -22,7 +22,9 @@ const Doctors = () => {
       </div>
       <div className="flex justify-center m-2">
         <Link href={'/allDoctors'}>
-          <motion.button whileHover={{ scale: 1.2 }} className="btn btn-link">
+          <motion.button
+            whileHover={{ scale: 1.2 }}
+            className="btn btn-link text-success">
             See All
           </motion.button>
         </Link>

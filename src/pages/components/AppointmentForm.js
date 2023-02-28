@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import appointment from '../../images/appointment.png';
 
 const AppointmentForm = () => {
@@ -13,7 +13,16 @@ const AppointmentForm = () => {
       phone,
       address,
     };
-    console.log(contactUs);
+
+    fetch('https://server.doctorservicebd.com/user', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(contactUs),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
     form.reset();
   };
   return (

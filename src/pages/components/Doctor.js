@@ -8,7 +8,7 @@ const Doctor = ({ doctor }) => {
     <section>
       <motion.div
         whileHover={{ scale: 1.1 }}
-        className="card card-side bg-base-100 shadow-xl">
+        className="card card-side bg-base-100 shadow-xl border border-2">
         <figure className="pl-2 h-72">
           <Image
             className="rounded-xl max-w-xs"
